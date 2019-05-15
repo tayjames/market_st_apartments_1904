@@ -19,11 +19,23 @@ class Building
 
   def renter_with_highest_rent
     greatest = @units.first
+    #this work below was my second guess as to how to make this method work.
+    # if @units.renter.any? {|renter| @units.renter == nil}
+    #   greatest = renter.final_all {|renter| @units.renter != nil}
+    # else @units.each do |apartment|
+    #   if apartment.monthly_rent > greatest.monthly_rent
+    #     greatest = apartment
+    #    end
+    #  end
+    # # else @units.monthly_rent > greatest.monthly_rent
+    # #   greatest = apartment
+    # end
     @units.each do |apartment|
       if apartment.monthly_rent > greatest.monthly_rent
         greatest = apartment
       end
     end
+    #binding.pry
      greatest.renter
   end
 
