@@ -14,11 +14,6 @@ class Building
     integer = total_rent.inject(0) { |sum, apartment| sum + apartment.monthly_rent}
     float = integer.to_f / total_rent.size
     float
-    # total_rent = @units.map {|unit| unit.apartment.monthly_rent}
-    #   unit.a
-    # @units.each do |unit|
-    #   unit.apartment.monthly_rent
-
   end
 
 end
