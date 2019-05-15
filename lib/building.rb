@@ -1,3 +1,4 @@
+require "pry"
 class Building
   attr_reader :units
 
@@ -14,6 +15,16 @@ class Building
     integer = total_rent.inject(0) { |sum, apartment| sum + apartment.monthly_rent}
     float = integer.to_f / total_rent.size
     float
+  end
+
+  def renter_with_highest_rent
+    greatest = @units.first
+    @units.each do |apartment|
+      if apartment.monthly_rent > greatest.monthly_rent
+        greatest = apartment
+      end
+    end
+     greatest.renter
   end
 
 end
